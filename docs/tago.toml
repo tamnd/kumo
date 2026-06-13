@@ -1,0 +1,10 @@
+title       = "kumo"
+baseURL     = "https://kumo-cli.tamnd.com/"
+description = "kumo takes a host, crawls every page, converts each to clean structured Markdown and JSON, and saves the result as a navigable URI tree under your data directory."
+contentDir  = "content"
+outputDir   = "public"
+theme       = "tago-doks"
+syntaxHighlight = "true"
+
+[params]
+github = "https://github.com/tamnd/kumo-cli"
