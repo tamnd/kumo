@@ -17,7 +17,7 @@ import (
 
 // DefaultUserAgent identifies the client to kumo. A real, honest
 // User-Agent is both polite and the thing most likely to keep you unblocked.
-const DefaultUserAgent = "kumo/dev (+https://github.com/tamnd/kumo-cli)"
+const DefaultUserAgent = "kumo/dev (+https://github.com/tamnd/kumo)"
 
 // Client talks to kumo over HTTP.
 type Client struct {

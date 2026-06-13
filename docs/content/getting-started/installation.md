@@ -6,7 +6,7 @@ weight: 20
 
 ## Prebuilt binaries
 
-Every [release](https://github.com/tamnd/kumo-cli/releases) carries archives for Linux, macOS,
+Every [release](https://github.com/tamnd/kumo/releases) carries archives for Linux, macOS,
 and Windows on amd64 and arm64, plus deb, rpm, and apk packages for Linux.
 Download, unpack, put `kumo` on your `PATH`, done. The `checksums.txt`
 on each release is signed with keyless [cosign](https://docs.sigstore.dev/) if
@@ -15,7 +15,7 @@ you want to verify before running.
 ## With Go
 
 ```bash
-go install github.com/tamnd/kumo-cli/cmd/kumo@latest
+go install github.com/tamnd/kumo/cmd/kumo@latest
 ```
 
 That puts `kumo` in `$(go env GOPATH)/bin`, which is `~/go/bin` unless
@@ -24,8 +24,8 @@ you moved it. Make sure that directory is on your `PATH`.
 ## From source
 
 ```bash
-git clone https://github.com/tamnd/kumo-cli
-cd kumo-cli
+git clone https://github.com/tamnd/kumo
+cd kumo
 make build        # produces ./bin/kumo
 ./bin/kumo version
 ```

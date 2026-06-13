@@ -9,10 +9,10 @@ tools. No API key, nothing to run alongside it.
 ## Install
 
 ```bash
-go install github.com/tamnd/kumo-cli/cmd/kumo@latest
+go install github.com/tamnd/kumo/cmd/kumo@latest
 ```
 
-Or grab a prebuilt binary from the [releases](https://github.com/tamnd/kumo-cli/releases), or run
+Or grab a prebuilt binary from the [releases](https://github.com/tamnd/kumo/releases), or run
 the container image:
 
 ```bash

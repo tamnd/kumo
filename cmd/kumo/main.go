@@ -8,7 +8,7 @@ import (
 	"syscall"
 
 	"github.com/charmbracelet/fang"
-	"github.com/tamnd/kumo-cli/cli"
+	"github.com/tamnd/kumo/cli"
 )
 
 func main() {
