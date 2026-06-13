@@ -46,8 +46,8 @@ type Page struct {
 // pages:// URI so the data tree is a real graph; off-host targets keep their
 // absolute URL.
 type Link struct {
-	URI    string `json:"uri"`
-	Anchor string `json:"anchor,omitempty"`
+	URI    string `json:"uri" table:"uri,url"`
+	Anchor string `json:"anchor,omitempty" table:"anchor,truncate"`
 	Rel    string `json:"rel,omitempty"`
 }
 
