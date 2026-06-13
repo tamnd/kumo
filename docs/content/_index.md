@@ -10,13 +10,14 @@ heroPrimaryText: "Get started"
 Crawl a whole host into structured data.
 
 ```bash
-kumo --help            # the command tree
-kumo version           # build info
+kumo scrape example.com --max-pages 20   # crawl a host into $HOME/data
+kumo pages example.com -o table          # read back what you crawled
+kumo page https://example.com/ -o json   # structure a single page
 ```
 
-This site is a starting point. As you add commands, document each one under
-[guides](/guides/) and keep the [CLI reference](/reference/cli/) in step with
-the real flag set.
+Each page is written as `pages/<host>/<path>.md`: a JSON front-matter block with
+the title, description, canonical, language, dates, OpenGraph, JSON-LD, and
+outbound links, followed by the main content as Markdown.
 
 ## Where to go next
 

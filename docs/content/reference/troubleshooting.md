@@ -4,30 +4,33 @@ description: "The handful of things that trip people up, and how to fix each one
 weight: 40
 ---
 
-Most of these come down to network reality or how kumo serves its data,
-not a bug. Fill this page out with the site-specific cases as you find them.
+Most of these come down to network reality or how a host serves its pages, not a
+bug.
 
 ## Requests start failing or returning 429
 
-kumo rate-limits like any public site. kumo already paces
-requests and retries the transient failures, but a hard limit still means
-backing off. Raise the delay between requests with `--rate` (for example
-`--rate 1s`), lower any concurrency you have set, and retry later. A burst of
-429 or 5xx responses is the site asking you to slow down, not a defect.
+A public host rate-limits like any other. kumo already paces requests and
+retries the transient failures, but a hard limit still means backing off. Raise
+the delay between requests with `--rate` (for example `--rate 2s`), lower the
+worker count with `-j`, and retry later. A burst of 429 or 5xx responses is the
+host asking you to slow down, not a defect.
 
-## Nothing is found for something you expected
+## A crawl stops earlier than you expected
 
-The public surface is not the whole site. Some data sits behind a login, a
-region, or a page that only renders with JavaScript, and that part is not
-reachable without the right session. Check that the input is spelled the way the
-site uses it, try a broader query, and see whether the same thing is visible in
-a private browser window before assuming it is missing.
+A crawl is bound to one host and to your limits. If it ends with fewer pages
+than you thought, check that robots.txt does not disallow the paths (run with
+`--no-robots` to confirm), that `--max-pages`, `--max-depth`, and
+`--scope-prefix` are not cutting it short, and that the links you want are
+on-host. Subdomains need `--include-subdomains`, and site-search routes need
+`--include-search`.
 
-## A command needs a session
+## A page comes back with no content
 
-Where a surface is gated, kumo reads a cookie or token you supply
-rather than logging in for you. Pass it on the command that needs it and keep it
-out of your shell history. Commands that work without one stay anonymous.
+kumo extracts the main readable content and drops site chrome. A page that is
+mostly navigation, a redirect, a non-HTML response, or one that only renders
+with JavaScript can yield an empty body, and an empty body is not written to the
+tree. For documentation sites that publish a Markdown source, `--raw-md` prefers
+the site's own `<page>.md`.
 
 ## The binary is not on your PATH
 
