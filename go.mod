@@ -45,7 +45,7 @@ require (
 	github.com/muesli/roff v0.1.0 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/spf13/pflag v1.0.9 // indirect
-	github.com/tamnd/any-cli v0.1.0
+	github.com/tamnd/any-cli v0.2.0
 	github.com/temoto/robotstxt v1.1.2
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
 	golang.org/x/net v0.56.0
